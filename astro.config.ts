@@ -109,13 +109,15 @@ export default defineConfig({
     defaultStrategy: 'viewport',
     prefetchAll: true,
   },
-    // ! 改为你的网站地址，不然社交图片无法加载
-    site: "https://demo.343700.xyz/",
+    site: "https://zjmnet7213.ccwu.cc/",
     vite: {
         optimizeDeps: {
             exclude: ["@resvg/resvg-js"],
         },
         plugins: [rawFonts([".ttf", ".woff"])],
+        ssr: {
+            external: ["@resvg/resvg-js"],
+        },
     },
     env: {
         schema: {
